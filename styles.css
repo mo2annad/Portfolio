@@ -231,7 +231,7 @@ pre { padding: 28px; white-space: pre-wrap; color: #dce9fa; font: 500 .95rem/1.8
 .contact-text { color: var(--muted); max-width: 620px; margin-top: 18px; }
 .contact-card { background: rgba(16,29,49,.78); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: grid; gap: 13px; }
 .contact-card > a:first-child { color: var(--accent); word-break: break-word; }
-.social-row { display: flex; gap: 10px; }
+.social-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .social-row a { color: var(--muted); border: 1px solid var(--line); padding: 8px 12px; border-radius: 10px; }
 .social-row a { transition: color .2s ease, border-color .2s ease, transform .25s var(--ease-out), background .2s ease; }
 .social-row a:hover { color: var(--accent); border-color: rgba(100,243,198,.45); background: rgba(100,243,198,.06); transform: translateY(-4px); }
@@ -264,6 +264,7 @@ pre { padding: 28px; white-space: pre-wrap; color: #dce9fa; font: 500 .95rem/1.8
   .language-list { grid-template-columns: 1fr; }
   .project-card { grid-template-columns: 1fr; }
   .hero { gap: 30px; }
+  .contact-card { padding: 22px; }
   .orbit-one { width: 280px; height: 280px; }
   .orbit-two { width: 220px; height: 220px; }
   .footer-inner { flex-direction: column; }
