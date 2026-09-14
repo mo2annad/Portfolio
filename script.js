@@ -4,11 +4,21 @@ const header = document.querySelector(".site-header");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 menuBtn?.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
+  const isOpen = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
 });
 
 document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => navLinks.classList.remove("open"));
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn?.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.addEventListener("click", event => {
+  if (!navLinks?.classList.contains("open") || navLinks.contains(event.target) || menuBtn?.contains(event.target)) return;
+  navLinks.classList.remove("open");
+  menuBtn?.setAttribute("aria-expanded", "false");
 });
 
 const revealItems = document.querySelectorAll(".section-heading, .about-copy, .stats, .skill-card, .timeline-item, .project-card, .languages, .contact-inner");
